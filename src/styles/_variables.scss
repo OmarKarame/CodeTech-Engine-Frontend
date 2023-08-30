@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@font-face {
+    font-family: Ailerons;
+    src: url("./fonts/Ailerons-Typeface.otf") format("opentype");
+}
+
+// breakpoints
+$mobile-breakpoint: 480px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1024px;
+$large-desktop-breakpoint: 1440px;
+$extra-large-desktop-breakpoint: 2560px;
+
+//main colors
+$color-white: #fafafa;
+$color-black: #121212;
+$color-orange: #E9612C;
+
+// font weight:
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+//font sizes 
+$font-size-largest: 6rem;
+$font-size-extra-large: 2.5rem;
+$font-size-large: 2rem;
+$font-size-medium: 1.5rem;
+$font-size-small: 1.25rem;
+$font-size-extra-small: 1rem;
+
+// letter-spacing:
+$letter-spacing: 160%;
+
+$primary-font-family: 'Lato', sans-serif;
+$secondary-font-family: 'Ailerons';
