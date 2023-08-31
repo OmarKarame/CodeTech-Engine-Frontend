@@ -1,0 +1,15 @@
+@use "../../styles/_variables.scss" as *;
+@use "../../styles/_reset.scss" as *;
+@use "../../styles/_typography.scss" as *;
+
+.title{
+  color: $color-white;
+  height: 20rem;
+  width: 25rem;
+  &--primary{
+    font-family: $secondary-font-family;
+    letter-spacing: -1.5rem;
+    margin: 1rem;
+    margin-left: 5rem;
+  }
+}

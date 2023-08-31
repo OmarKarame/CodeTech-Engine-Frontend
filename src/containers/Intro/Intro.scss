@@ -1,0 +1,11 @@
+@use "../../styles/_variables.scss" as *;
+@use "../../styles/_reset.scss" as *;
+@use "../../styles/_typography.scss" as *;
+
+.intro{
+  height: 90%;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

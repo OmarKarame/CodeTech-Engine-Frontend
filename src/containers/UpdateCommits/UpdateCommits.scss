@@ -1,0 +1,15 @@
+@use "../../styles/_variables.scss" as *;
+@use "../../styles/_reset.scss" as *;
+@use "../../styles/_typography.scss" as *;
+
+// .update-commits {
+//     // height: 100vh;
+//     // width: 100vw;
+// }
+
+@media only screen and (max-width: $mobile-breakpoint) {
+    .about-me-layout {
+        width: 100vw;
+        height: 50vh;
+    }
+}

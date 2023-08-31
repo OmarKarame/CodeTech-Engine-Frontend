@@ -1,0 +1,31 @@
+@use "../../styles/_variables.scss" as *;
+@use "../../styles/_reset.scss" as *;
+@use "../../styles/_typography.scss" as *;
+
+.header{
+  width: 100vw;
+  height: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  &--cte{
+    font-family: $secondary-font-family;
+    color: $color-white;
+    font-size: 4rem;
+    letter-spacing: -1rem;
+  }
+  &--navbar-links{
+    color: $color-white;
+    width: 30rem;
+    font-size: 1.25rem;
+    font-family: $primary-font-family;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p{
+      width: max-content;
+    }
+  }
+}
