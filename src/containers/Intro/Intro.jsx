@@ -7,6 +7,8 @@ const Intro = () => {
     <div className='intro'>
       <Title
         primaryTitle="COMMIT TO EXCELLENCE"
+        secondaryTitle="AI solutions built for developers"
+        className='intro--title'
       />
       <BlobContainer />
     </div>

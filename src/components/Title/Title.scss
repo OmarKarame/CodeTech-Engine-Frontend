@@ -6,10 +6,55 @@
   color: $color-white;
   height: 20rem;
   width: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 8rem;
   &--primary{
     font-family: $secondary-font-family;
-    letter-spacing: -1.5rem;
     margin: 1rem;
-    margin-left: 5rem;
+    margin-left: 1rem;
+    font-size: 3.5rem;
+    margin-top: -1rem;
+  }
+  &--secondary{
+    width: 25rem;
+    font-family: $primary-font-family;
+    margin-top: -1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+  }
+}
+
+
+@media only screen and (max-width: $desktop-breakpoint) {
+  .title{
+    color: $color-white;
+    height: 20rem;
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: -1rem;
+    &--primary{
+      font-family: $secondary-font-family;
+      margin: 1rem;
+      margin-left: 1rem;
+      font-size: 3.5rem;
+      margin-top: -1rem;
+      text-align: center;
+    }
+    &--secondary{
+      width: 25rem;
+      font-family: $primary-font-family;
+      margin-top: -1rem;
+      margin-right: 1rem;
+      margin-left: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
   }
 }

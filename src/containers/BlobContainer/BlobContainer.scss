@@ -3,7 +3,17 @@
 @use "../../styles/_typography.scss" as *;
 
 .blob-container{
-  height: 50rem;
-  width: 50rem;
+  height: 55rem;
+  width: 55rem;
   // border: 0.2rem solid white;
+  margin-top: -5rem;
+}
+
+
+@media only screen and (max-width: $desktop-breakpoint) {
+  .blob-container{
+    height: 35rem;
+    width: 35rem;
+    margin-top: -5rem;
+  }
 }

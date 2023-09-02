@@ -3,7 +3,7 @@ import './Header.scss'
 const Header = () => {
   return (
     <div className='header'>
-      <p className='header--cte'>cTe</p>
+      <p className='header--cte'><span className='header--cte__e'>c</span>Te</p>
       <div className='header--navbar-links'>
         <p>Home</p>
         <p>About</p>

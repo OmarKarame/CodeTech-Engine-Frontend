@@ -6,19 +6,24 @@
   width: 100vw;
   height: 10%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding-left: 2rem;
   padding-right: 2rem;
   &--cte{
     font-family: $secondary-font-family;
     color: $color-white;
-    font-size: 4rem;
-    letter-spacing: -1rem;
+    font-size: 3rem;
+    width: max-content;
+    letter-spacing: -0.7rem;
+    &__e{
+      font-family: $secondary-font-family;
+      transform: rotate(90deg);
+    }
   }
   &--navbar-links{
     color: $color-white;
-    width: 30rem;
+    width: 20rem;
     font-size: 1.25rem;
     font-family: $primary-font-family;
     display: flex;

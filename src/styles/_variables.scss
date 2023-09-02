@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Lato&family=Oxanium&display=swap');
 @font-face {
-    font-family: Ailerons;
-    src: url("./fonts/Ailerons-Typeface.otf") format("opentype");
+  font-family: 'Lato', sans-serif;
+  font-family: 'Oxanium', cursive;
+  src: url('https://fonts.googleapis.com/css2?family=Lato&family=Oxanium&display=swap') format("opentype");
 }
 
 // breakpoints
@@ -32,4 +33,4 @@ $font-size-extra-small: 1rem;
 $letter-spacing: 160%;
 
 $primary-font-family: 'Lato', sans-serif;
-$secondary-font-family: 'Ailerons';
+$secondary-font-family: 'Oxavium';
