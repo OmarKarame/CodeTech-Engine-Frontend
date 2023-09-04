@@ -1,0 +1,32 @@
+@use "../../styles/_variables.scss" as *;
+@use "../../styles/_reset.scss" as *;
+@use "../../styles/_typography.scss" as *;
+
+
+.search-bar {
+  display: flex;
+  // width: 30rem;
+  // height: 3rem;
+  // align-items: center;
+  // background-color: $color-white;
+  // border-radius: 3rem;
+  // border: 0.5rem;
+  border-color: $color-white;
+  &__input {
+    padding: 0.4rem;
+    height: 3rem;
+    max-width: 34rem;
+    width: 60vw;
+    color: lightgrey;
+    line-height: 0.97rem;
+    border: 0.15rem solid $color-black;
+    border-radius: 1rem;
+    box-shadow: 0rem 0rem 1rem rgba(128, 128, 128, 0.586);
+    font-size: 1rem;
+    font-family: $primary-font-family;
+  }
+  &__input:focus {
+    outline: none;
+    color: $color-black;
+  }
+}

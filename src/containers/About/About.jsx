@@ -5,7 +5,6 @@ import React, { useState, useEffect, useRef } from 'react';
 const About = () => {
   const [cardIsVisible, setCardIsVisible] = useState();
   const myRef = useRef()
-  console.log('card is visible: ', cardIsVisible);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
