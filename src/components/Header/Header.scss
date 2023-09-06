@@ -10,6 +10,7 @@
   align-items: center;
   padding-left: 2rem;
   padding-right: 2rem;
+  z-index: 10;
   &--cte{
     font-family: $secondary-font-family;
     color: $color-white;
@@ -21,9 +22,13 @@
       transform: rotate(90deg);
     }
   }
+  &__logo-letters{
+    height: 3.5rem;
+  }
   &--navbar-links{
     color: $color-white;
     width: 20rem;
+    z-index: 10;
     font-size: 1.25rem;
     font-family: $primary-font-family;
     display: flex;
@@ -31,6 +36,46 @@
     align-items: center;
     p{
       width: max-content;
+      color: $color-white;
+    }
+  }
+  &--navbar-dropdown{
+    color: $color-white;
+    width: 2rem;
+    font-size: 2rem;
+    font-family: $primary-font-family;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p{
+      width: max-content;
+      color: $color-white;
+      transform: translateX(0.25rem) translateY(-0.25rem);
+    }
+    &__image{
+      height: 1.5rem;
+      z-index: 10;
+      transform: translateX(-0.25rem) translateY(0.25rem);
+      &:hover{
+        cursor: pointer;
+      }
+    }
+    &__links{
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      width: 100vw;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to bottom, #b831f6, #721ff5, #2d27f5, #658ef7);
+      p{
+        font-family: $secondary-font-family;
+      }
     }
   }
 }

@@ -29,4 +29,7 @@
       box-shadow: 0rem 0rem 1.5rem rgba(128, 128, 128, 0.586);
       transition: 50ms;
   }
+  &:hover{
+    cursor: pointer;
+  }
 }

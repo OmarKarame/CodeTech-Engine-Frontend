@@ -22,7 +22,7 @@ const Trial = () => {
   const getLastCommit = async (headers) => {
     const params = new URLSearchParams({ 'per_page': 1 });
     // const url = `https://api.github.com/repos/${searchTerm}/commits?${params.toString()}`;
-    const url = `https://api.github.com/repos/OmarKarame/Commit-To-Excellence-Backend/commits?${params.toString()}`;
+    const url = `https://api.github.com/repos/OmarKarame/commit-to-excellence-frontend/commits?${params.toString()}`;
 
     let response = await fetch(url, { headers });
     if (response.status !== 200) {
@@ -32,7 +32,7 @@ const Trial = () => {
     let json = await response.json();
     const sha = json[0].sha;
 
-    const diffUrl = `https://api.github.com/repos/OmarKarame/Commit-To-Excellence-Backend/commits/${sha}`;
+    const diffUrl = `https://api.github.com/repos/OmarKarame/commit-to-excellence-frontend/commits/${sha}`;
     // const diffUrl = `https://api.github.com/repos/${searchTerm}/commits/${sha}`;
     let diffResponse = await fetch(diffUrl, { headers });
     setCommitMessage(json[0]['commit']['message']);
@@ -43,6 +43,7 @@ const Trial = () => {
 
     let diffText = await diffResponse.text();
     setDiffText(diffText);
+    console.log(diffText)
   };
 
   useEffect(()=>{
@@ -50,7 +51,7 @@ const Trial = () => {
       return
     }
     const headers = {
-      'Authorization': `token ${token}`,
+      // 'Authorization': `token ${token}`,
       'Accept': 'application/vnd.github.v3.diff'
     }
     getLastCommit(headers)
@@ -69,7 +70,7 @@ const Trial = () => {
 
 
   return (
-    <div className='trial'>
+    <div className='trial' id='trial'>
       <h2>
         Trial
       </h2>
@@ -84,13 +85,9 @@ const Trial = () => {
           />
         </div>
         <div className='trial__headers'>
-          <h4>Your Message</h4>
-          <h4>AI</h4>
-          <h4>New Message</h4>
         </div>
         <div className='trial__computation'>
           <h5>{commitMessage}</h5>
-          <img src={imageDisplayed} alt="Neural network in action" className='trial__neural-net'/>
           <h5>{newMessage}</h5>
         </div>
       </div>

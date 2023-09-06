@@ -47,6 +47,7 @@
       padding-left: 2rem;
       padding-right: 2rem;
       transform: translateY(-4rem);
+      cursor: pointer;
       p{
         font-size: 1.25rem;
       }
@@ -104,6 +105,7 @@
       padding-left: 2rem;
       padding-right: 2rem;
       transform: translateY(4rem);
+      cursor: pointer;
       p{
         font-size: 1.25rem;
       }
@@ -182,6 +184,9 @@
           color: rgb(43, 0, 255);
           margin-bottom: 3rem;
         }
+        &:hover{
+          cursor: pointer;
+        }
       }
     }
 
@@ -245,6 +250,9 @@
           margin-bottom: -4rem;
           aspect-ratio: 1;
         }
+      }
+      &:hover{
+        cursor: pointer;
       }
     }
   }

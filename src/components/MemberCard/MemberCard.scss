@@ -1,3 +1,42 @@
 @use "../../styles/_variables.scss" as *;
 @use "../../styles/_reset.scss" as *;
 @use "../../styles/_typography.scss" as *;
+
+.member-card{
+  min-height: 25rem;
+  width: 20rem;
+  // border: 0.1rem solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  &__background1{
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    min-height: 15rem;
+    min-width: 15rem;
+    border-radius: 10rem;
+    background: linear-gradient(to top right, #721ff5, #658ef7);
+    box-shadow: 0rem 3rem 2rem rgba(114, 31, 245, 0.4);
+  }
+  &__background2{
+    margin-top: 2rem;
+    height: 15rem;
+    width: 15rem;
+    border-radius: 10rem;
+    background: linear-gradient(to bottom right, #b831f6, #2d27f5);
+    box-shadow: 0rem 3rem 2rem rgba(114, 31, 245, 0.4);
+  }
+  h4{
+    color: $color-white;
+    font-size: 2rem;
+    margin-top: -17rem;
+  }
+  &__image{
+    height: 20rem;
+    transform: translateY(-20rem);
+    border-radius: 0rem 0rem 10rem 10rem;
+    // position: fixed;
+  }
+}

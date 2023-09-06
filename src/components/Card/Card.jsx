@@ -1,6 +1,6 @@
 import './Card.scss'
-import gitLogo from '../../styles/images/git-logo.png'
-import cteLogo from '../../styles/images/cte-logo.png'
+import gitLogo from '../../styles/images/git-icon-logo-white.png'
+import cteLogo from '../../styles/images/cte-logo-white.png'
 
 const Card = ({ cardClassName, isCTE }) => {
   if(isCTE){

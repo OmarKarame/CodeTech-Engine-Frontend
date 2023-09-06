@@ -15,7 +15,7 @@ const About = () => {
   }, [])
 
   return (
-    <div className='about'>
+    <div className='about' id='about'>
       <h2 className='about--title'>About</h2>
       <div
         className={cardIsVisible ? 'about--section__visible' : 'about--section__hidden'}

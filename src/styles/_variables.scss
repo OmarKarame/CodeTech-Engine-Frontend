@@ -1,9 +1,14 @@
-// @import url('https://fonts.googleapis.com/css2?family=Lato&family=Oxanium&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 @font-face {
-  font-family: 'Lato', sans-serif;
-  font-family: 'Oxanium', cursive;
-  src: url('https://fonts.googleapis.com/css2?family=Lato&family=Oxanium&display=swap') format("opentype");
+  font-family: 'Bree Serif', serif;;
+  src: url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 }
+// @font-face {
+//   font-family: 'Lato', sans-serif;
+//   // font-family: 'Oxanium', cursive;
+//   font-family: 'Bree Serif', serif;
+//   src: url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lato&family=Oxanium&display=swap') format("opentype");
+// }
 
 // breakpoints
 $mobile-breakpoint: 480px;
@@ -16,6 +21,12 @@ $extra-large-desktop-breakpoint: 2560px;
 $color-white: #fafafa;
 $color-black: #171717;
 $color-orange: #E9612C;
+
+// #b831f6 pink
+// #721ff5 purple
+// #658ef7 light blue
+// #2d27f5 dark blue
+
 
 // font weight:
 $font-weight-regular: 400;
@@ -33,4 +44,4 @@ $font-size-extra-small: 1rem;
 $letter-spacing: 160%;
 
 $primary-font-family: 'Lato', sans-serif;
-$secondary-font-family: 'Oxavium';
+$secondary-font-family: 'Bree Serif';
