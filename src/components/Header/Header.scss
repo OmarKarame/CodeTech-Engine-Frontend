@@ -37,6 +37,10 @@
     p{
       width: max-content;
       color: $color-white;
+      &:hover{
+        width: max-content;
+        color: #b831f6;
+      }
     }
   }
   &--navbar-dropdown{

@@ -2,58 +2,635 @@
 @use "../../styles/_reset.scss" as *;
 @use "../../styles/_typography.scss" as *;
 
-.trial{
-  width: 100vw;
-  height: 90vh;
-  min-height: 60rem;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  &__headers{
-    width: 90vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 6rem;
-    margin-bottom: -5rem;
-    max-width: 90rem;
-  }
-  &__body{
-    height: 80rem;
+
+@media only screen and (min-width: $desktop-breakpoint) {
+  .trial{
     width: 100vw;
+    height: 100vh;
+    min-height: 60rem;
+    background-color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-  &__search{
-    width: 70vw;
-    max-width: 40rem;
-    margin-top: 5rem;
-    display: flex;
     justify-content: space-around;
-  }
-  &__neural-net{
-    width: 50vw;
-    min-height: 18rem;
-  }
-  &__computation{
-    display: flex;
-    width: 110vw;
-    height: 30rem;
-    margin-top: 5rem;
     align-items: center;
+    &__headers{
+      width: 90vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 6rem;
+      margin-bottom: -5rem;
+      max-width: 90rem;
+    }
+    &__body{
+      height: 80rem;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__search{
+      max-width: 45rem;
+      margin-top: 5rem;
+      display: flex;
+      justify-content: space-around;
+    }
+    &__neural-net{
+      width: 50vw;
+      min-height: 18rem;
+    }
+    &__computation{
+      display: flex;
+      width: 110vw;
+      height: 30rem;
+      margin-top: 5rem;
+      align-items: center;
+      justify-content: space-around;
+      text-align: center;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    h2{
+      margin-top: 4rem;
+      font-family: $secondary-font-family;
+    }
+    h5{
+      max-width: 20rem;
+    }
+    &__terminals{
+      display: flex;
+      margin-top: 4rem;
+    }
+    &__git-terminal{
+      transform: translateY(-2rem);
+      margin-top: 3rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+      height: 30rem;
+      border-radius: 0.65rem;
+      width: 35rem;
+      background-color: $color-black;
+      box-shadow: 0rem 0rem 2rem rgba(128, 128, 128, 0.9);
+      &--text{
+        font-size: 1.5rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        color: $color-white;
+        p{
+          margin-top: 0.75rem;
+        }
+      }
+      &--nav{
+        height: 2rem;
+        width: 100%;
+        border-radius: 0.65rem 0.65rem 0rem 0rem;
+        background-color: rgb(225, 225, 225);
+        display: flex;
+        &--buttons{
+          width: 4rem;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          margin-left: 0.75rem;
+          margin-right: 11rem;
+          &--red{
+            height: 0.7rem;
+            width: 0.7rem;
+            border-radius: 10rem;
+            background-color: rgb(236, 0, 0);
+            &:hover{
+              background-color: darkred;
+              cursor: pointer;
+            }
+          }
+          &--yellow{
+            height: 0.7rem;
+            width: 0.7rem;
+            margin-left: 0.25rem;
+            border-radius: 10rem;
+            background-color: rgb(236, 208, 0);
+            &:hover{
+              background-color: darkgoldenrod;
+              cursor: pointer;
+            }
+          }
+          &--green{
+            height: 0.7rem;
+            width: 0.7rem;
+            margin-left: 0.25rem;
+            border-radius: 10rem;
+            background-color: rgb(2, 223, 2);
+            &:hover{
+              background-color: darkgreen;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+    &__cte-terminal{
+      transform: translateY(2rem);
+      margin-top: 3rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+      height: 30rem;
+      border-radius: 0.65rem;
+      width: 35rem;
+      background-color: $color-black;
+      box-shadow: 0rem 0rem 2rem rgba(128, 128, 128, 0.9);
+      &--response--visible{
+        font-weight: 300;
+        padding-left: 1.25rem;
+      }
+      &--text{
+        font-size: 1.5rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        color: $color-white;
+      }
+      &--nav{
+        height: 2rem;
+        width: 100%;
+        border-radius: 0.65rem 0.65rem 0rem 0rem;
+        background-color: rgb(225, 225, 225);
+        display: flex;
+        &--buttons{
+          width: 4rem;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          margin-left: 0.75rem;
+          margin-right: 11rem;
+          &--red{
+            height: 0.7rem;
+            width: 0.7rem;
+            border-radius: 10rem;
+            background-color: rgb(236, 0, 0);
+            &:hover{
+              background-color: darkred;
+              cursor: pointer;
+            }
+          }
+          &--yellow{
+            height: 0.7rem;
+            width: 0.7rem;
+            margin-left: 0.25rem;
+            border-radius: 10rem;
+            background-color: rgb(236, 208, 0);
+            &:hover{
+              background-color: darkgoldenrod;
+              cursor: pointer;
+            }
+          }
+          &--green{
+            height: 0.7rem;
+            width: 0.7rem;
+            margin-left: 0.25rem;
+            border-radius: 10rem;
+            background-color: rgb(2, 223, 2);
+            &:hover{
+              background-color: darkgreen;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+    .red{
+      color: rgb(254, 84, 84);
+    }
+    .blue{
+      color: rgb(128, 166, 255);
+    }
+    .yellow{
+      color: rgb(238, 253, 123);
+    }
+    .green{
+      color: rgb(47, 255, 134);
+    }
+    .orange{
+      color: rgb(254, 177, 34);
+    }
+
+    .bold{
+      color: white;
+      font-weight: bolder;
+      letter-spacing: -1.35rem;
+    }
+  }
+}
+
+@media only screen and (max-width: $desktop-breakpoint) {
+  .trial{
+    width: 100vw;
+    height: auto;
+    padding-bottom: 4rem;
+    min-height: 60rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    text-align: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    align-items: center;
+    &__headers{
+      width: 90vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 6rem;
+      margin-bottom: -5rem;
+      max-width: 90rem;
+    }
+    &__body{
+      height: 80rem;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__search{
+      width: 70vw;
+      max-width: 40rem;
+      margin-top: 5rem;
+      display: flex;
+      justify-content: space-around;
+    }
+    &__neural-net{
+      width: 50vw;
+      min-height: 18rem;
+    }
+    &__computation{
+      display: flex;
+      width: 110vw;
+      height: 30rem;
+      margin-top: 5rem;
+      align-items: center;
+      justify-content: space-around;
+      text-align: center;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    h2{
+      margin-top: 4rem;
+      font-family: $secondary-font-family;
+    }
+    h5{
+      max-width: 20rem;
+    }
+    &__terminals{
+      display: flex;
+      flex-direction: column;
+      margin-top: 4rem;
+    }
+    &__git-terminal{
+      transform: translateY(-2rem);
+      margin-top: 3rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+      height: 30rem;
+      border-radius: 0.65rem;
+      width: 35rem;
+      background-color: $color-black;
+      box-shadow: 0rem 0rem 2rem rgba(128, 128, 128, 0.9);
+      &--text{
+        font-size: 1.5rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        color: $color-white;
+      }
+      &--nav{
+        height: 2rem;
+        width: 100%;
+        border-radius: 0.65rem 0.65rem 0rem 0rem;
+        background-color: rgb(225, 225, 225);
+        display: flex;
+        &--buttons{
+          width: 4rem;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          margin-left: 0.75rem;
+          margin-right: 11rem;
+          &--red{
+            height: 0.7rem;
+            width: 0.7rem;
+            border-radius: 10rem;
+            background-color: rgb(236, 0, 0);
+            &:hover{
+              background-color: darkred;
+              cursor: pointer;
+            }
+          }
+          &--yellow{
+            height: 0.7rem;
+            width: 0.7rem;
+            margin-left: 0.25rem;
+            border-radius: 10rem;
+            background-color: rgb(236, 208, 0);
+            &:hover{
+              background-color: darkgoldenrod;
+              cursor: pointer;
+            }
+          }
+          &--green{
+            height: 0.7rem;
+            width: 0.7rem;
+            margin-left: 0.25rem;
+            border-radius: 10rem;
+            background-color: rgb(2, 223, 2);
+            &:hover{
+              background-color: darkgreen;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+    &__cte-terminal{
+      transform: translateY(2rem);
+      margin-top: 1rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+      height: 30rem;
+      border-radius: 0.65rem;
+      width: 35rem;
+      background-color: $color-black;
+      box-shadow: 0rem 0rem 2rem rgba(128, 128, 128, 0.9);
+      &--text{
+        font-size: 1.5rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        color: $color-white;
+      }
+      &--nav{
+        height: 2rem;
+        width: 100%;
+        border-radius: 0.65rem 0.65rem 0rem 0rem;
+        background-color: rgb(225, 225, 225);
+        display: flex;
+        &--buttons{
+          width: 4rem;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          margin-left: 0.75rem;
+          margin-right: 11rem;
+          &--red{
+            height: 0.7rem;
+            width: 0.7rem;
+            border-radius: 10rem;
+            background-color: rgb(236, 0, 0);
+            &:hover{
+              background-color: darkred;
+              cursor: pointer;
+            }
+          }
+          &--yellow{
+            height: 0.7rem;
+            width: 0.7rem;
+            margin-left: 0.25rem;
+            border-radius: 10rem;
+            background-color: rgb(236, 208, 0);
+            &:hover{
+              background-color: darkgoldenrod;
+              cursor: pointer;
+            }
+          }
+          &--green{
+            height: 0.7rem;
+            width: 0.7rem;
+            margin-left: 0.25rem;
+            border-radius: 10rem;
+            background-color: rgb(2, 223, 2);
+            &:hover{
+              background-color: darkgreen;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
   }
-  h2{
-    margin-top: 4rem;
-    font-family: $secondary-font-family;
+
+  .red{
+    color: rgb(255, 58, 58);
   }
-  h5{
-    max-width: 20rem;
+  .blue{
+    color: rgb(105, 105, 249);
+  }
+  .green{
+    color: greenyellow;
+  }
+}
+
+
+@media only screen and (max-width: $tablet-breakpoint) {
+  .trial{
+    width: 100vw;
+    height: auto;
+    padding-bottom: 4rem;
+    min-height: 60rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: -10rem;
+    &__headers{
+      width: 90vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 6rem;
+      margin-bottom: -5rem;
+      max-width: 90rem;
+    }
+    &__body{
+      height: 80rem;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__search{
+      width: 70vw;
+      max-width: 40rem;
+      margin-top: 5rem;
+      display: flex;
+      justify-content: space-around;
+    }
+    &__neural-net{
+      width: 50vw;
+      min-height: 18rem;
+    }
+    &__computation{
+      display: flex;
+      width: 110vw;
+      height: 30rem;
+      margin-top: 5rem;
+      align-items: center;
+      justify-content: space-around;
+      text-align: center;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    h2{
+      margin-top: 4rem;
+      font-family: $secondary-font-family;
+    }
+    h5{
+      max-width: 20rem;
+    }
+    &__terminals{
+      display: flex;
+      flex-direction: column;
+      margin-top: 4rem;
+    }
+    &__git-terminal{
+      transform: translateY(-2rem);
+      margin-top: 3rem;
+      margin-left: 4.25rem;
+      height: 25rem;
+      border-radius: 0.65rem;
+      width: 17rem;
+      background-color: $color-black;
+      box-shadow: 0rem 0rem 2rem rgba(128, 128, 128, 0.9);
+      &--text{
+        font-size: 1rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        color: $color-white;
+      }
+      &--nav{
+        height: 2rem;
+        width: 100%;
+        border-radius: 0.65rem 0.65rem 0rem 0rem;
+        background-color: rgb(225, 225, 225);
+        display: flex;
+        p{
+          width: 20rem;
+        }
+        &--buttons{
+          width: 4rem;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          margin-left: 0.75rem;
+          margin-right: 3rem;
+          &--red{
+            height: 0.7rem;
+            width: 0.7rem;
+            border-radius: 10rem;
+            background-color: rgb(236, 0, 0);
+            &:hover{
+              background-color: darkred;
+              cursor: pointer;
+            }
+          }
+          &--yellow{
+            height: 0.7rem;
+            width: 0.7rem;
+            margin-left: 0.25rem;
+            border-radius: 10rem;
+            background-color: rgb(236, 208, 0);
+            &:hover{
+              background-color: darkgoldenrod;
+              cursor: pointer;
+            }
+          }
+          &--green{
+            height: 0.7rem;
+            width: 0.7rem;
+            margin-left: 0.25rem;
+            border-radius: 10rem;
+            background-color: rgb(2, 223, 2);
+            &:hover{
+              background-color: darkgreen;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+    &__cte-terminal{
+      transform: translateY(2rem);
+      transform: translateX(-2.25rem);
+      margin-top: 1rem;
+      margin-right: 2rem;
+      margin-left: 6.5rem;
+      height: 25rem;
+      border-radius: 0.65rem;
+      width: 17rem;
+      background-color: $color-black;
+      box-shadow: 0rem 0rem 2rem rgba(128, 128, 128, 0.9);
+      &--text{
+        font-size: 1rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        color: $color-white;
+      }
+      &--nav{
+        height: 2rem;
+        width: 100%;
+        border-radius: 0.65rem 0.65rem 0rem 0rem;
+        background-color: rgb(225, 225, 225);
+        display: flex;
+        &--buttons{
+          width: 4rem;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          margin-left: 0.75rem;
+          margin-right: 11rem;
+          &--red{
+            height: 0.7rem;
+            width: 0.7rem;
+            border-radius: 10rem;
+            background-color: rgb(236, 0, 0);
+            &:hover{
+              background-color: darkred;
+              cursor: pointer;
+            }
+          }
+          &--yellow{
+            height: 0.7rem;
+            width: 0.7rem;
+            margin-left: 0.25rem;
+            border-radius: 10rem;
+            background-color: rgb(236, 208, 0);
+            &:hover{
+              background-color: darkgoldenrod;
+              cursor: pointer;
+            }
+          }
+          &--green{
+            height: 0.7rem;
+            width: 0.7rem;
+            margin-left: 0.25rem;
+            border-radius: 10rem;
+            background-color: rgb(2, 223, 2);
+            &:hover{
+              background-color: darkgreen;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .red{
+    color: rgb(255, 58, 58);
+  }
+  .blue{
+    color: rgb(105, 105, 249);
+  }
+  .green{
+    color: greenyellow;
+  }
+  .yellow{
+    letter-spacing: 0.1rem;
+  }
+  .bold{
+    letter-spacing: -1.08rem;
   }
 }

@@ -1,12 +1,12 @@
 import './Button.scss'
 
-const Button = ({ handleButtonClick }) => {
+const Button = ({ handleButtonClick, buttonName }) => {
   return (
     <button
       className='button'
       onClick={handleButtonClick}
     >
-      Submit
+      {buttonName}
     </button>
   )
 }

@@ -2,27 +2,23 @@ import './Trial.scss'
 import { useState, useEffect } from 'react';
 import Button from '../../components/Button/Button'
 import SearchBar from '../../components/SearchBar/SearchBar'
-import neuralNetworkStart from '../../styles/images/neural-network-start.png'
-import neuralNetworkGif from '../../styles/images/ezgif.com-crop.gif'
-import neuralNetworkEnd from '../../styles/images/neural-network-end.png'
 
 const Trial = () => {
-  const images = [neuralNetworkStart, neuralNetworkGif, neuralNetworkEnd]
-  const [imageDisplayed, setImageDisplayed] = useState(images[0])
+  const [display, setDisplay] = useState(false)
   const [searchTerm, setSearchTerm] = useState("");
 
-  const [newMessage, SetNewMessage] = useState("");
+  const [newMessage, setNewMessage] = useState("");
 
   const [buttonClicked, setButtonClicked] = useState(false);
   const [commitMessage, setCommitMessage] = useState('')
   const [diffText, setDiffText] = useState('')
 
-  const token = process.env.REACT_APP_TOKEN
+  const [fileName, setFileName] = useState('file.py')
 
   const getLastCommit = async (headers) => {
     const params = new URLSearchParams({ 'per_page': 1 });
-    // const url = `https://api.github.com/repos/${searchTerm}/commits?${params.toString()}`;
-    const url = `https://api.github.com/repos/OmarKarame/commit-to-excellence-frontend/commits?${params.toString()}`;
+    const url = `https://api.github.com/repos/${searchTerm}/commits?${params.toString()}`;
+    // const url = `https://api.github.com/repos/scipy/scipy/commits?${params.toString()}`;
 
     let response = await fetch(url, { headers });
     if (response.status !== 200) {
@@ -32,19 +28,39 @@ const Trial = () => {
     let json = await response.json();
     const sha = json[0].sha;
 
-    const diffUrl = `https://api.github.com/repos/OmarKarame/commit-to-excellence-frontend/commits/${sha}`;
-    // const diffUrl = `https://api.github.com/repos/${searchTerm}/commits/${sha}`;
+    // const diffUrl = `https://api.github.com/repos/scipy/scipy/commits/${sha}`;
+    const diffUrl = `https://api.github.com/repos/${searchTerm}/commits/${sha}`;
     let diffResponse = await fetch(diffUrl, { headers });
-    setCommitMessage(json[0]['commit']['message']);
+    setCommitMessage(`${json[0]['commit']['message']}"`);
 
     if (diffResponse.status !== 200) {
       return "error";
     }
 
     let diffText = await diffResponse.text();
-    setDiffText(diffText);
-    console.log(diffText)
+    setDiffText(diffText.toString());
   };
+
+  const predictCommit = async (diff) => {
+    const url = 'https://cte-hctcd2f7fq-ew.a.run.app/predict';
+    const params = new URLSearchParams({
+      git_diff: diff
+    });
+
+    try {
+      const response = await fetch(`${url}?${params}`);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      setNewMessage(result['prediction']);
+    } catch (error) {
+      console.error("There was a problem with the fetch operation:", error);
+    }
+  }
+
 
   useEffect(()=>{
     if (!buttonClicked){
@@ -55,6 +71,8 @@ const Trial = () => {
       'Accept': 'application/vnd.github.v3.diff'
     }
     getLastCommit(headers)
+    predictCommit(diffText)
+    // setNewMessage()
     setButtonClicked(false)
   },[buttonClicked])
 
@@ -64,9 +82,15 @@ const Trial = () => {
   };
 
   const handleButtonClick = () => {
-    setImageDisplayed(images[1])
     setButtonClicked(true)
+    setDisplay(true)
   };
+
+  const handleReset = () => {
+    setNewMessage('')
+    setCommitMessage('')
+    setDisplay(false)
+  }
 
 
   return (
@@ -82,13 +106,49 @@ const Trial = () => {
           />
           <Button
             handleButtonClick={handleButtonClick}
+            buttonName='Submit'
+          />
+          <Button
+            handleButtonClick={handleReset}
+            buttonName='Reset'
           />
         </div>
-        <div className='trial__headers'>
-        </div>
-        <div className='trial__computation'>
-          <h5>{commitMessage}</h5>
-          <h5>{newMessage}</h5>
+        <div className='trial__terminals'>
+          <div className='trial__git-terminal'>
+            <div className='trial__git-terminal--nav'>
+              <div className='trial__git-terminal--nav--buttons'>
+                <div className='trial__git-terminal--nav--buttons--red'></div>
+                <div className='trial__git-terminal--nav--buttons--yellow'></div>
+                <div className='trial__git-terminal--nav--buttons--green'></div>
+              </div>
+              <p>~ {fileName} ~</p>
+            </div>
+            <div className='trial__git-terminal--text'>
+              <p>~ <span className='blue'>git:(</span><span className='red'>master</span><span className='blue'>) </span><span className='blue'> git </span> add {fileName}</p>
+              <p>~ <span className='blue'>git:(</span><span className='red'>master</span><span className='blue'>) <span className='blue'> git </span> commit -m </span><span className='yellow'>"{commitMessage}</span><span className='bold'>┃┃┃┃┃</span></p>
+            </div>
+          </div>
+          <div className='trial__cte-terminal'>
+            <div className='trial__cte-terminal--nav'>
+              <div className='trial__cte-terminal--nav--buttons'>
+                <div className='trial__cte-terminal--nav--buttons--red'></div>
+                <div className='trial__cte-terminal--nav--buttons--yellow'></div>
+                <div className='trial__cte-terminal--nav--buttons--green'></div>
+              </div>
+              <p>~ cte {fileName} ~</p>
+            </div>
+            <div className='trial__cte-terminal--text'>
+              <p>~ <span className='blue'>git:(</span><span className='red'>master</span><span className='blue'>) </span><span className='green'> cte </span> add {fileName}</p>
+              <p>~ <span className='blue'>git:(</span><span className='red'>master</span><span className='blue'>) </span><span className='green'> cte </span> smartcommit<span className='bold'>┃┃┃┃┃</span></p>
+              {display ? <div className='trial__cte-terminal--response--visible'>
+                <p className='orange'>  AI generated message:</p>
+                <br />
+                <p className='orange'> {newMessage} </p>
+                <br />
+                <p className='orange'>  Do you want to commit your file with this message? [y/N]</p>
+              </div> : <></>}
+            </div>
+          </div>
         </div>
       </div>
     </div>
