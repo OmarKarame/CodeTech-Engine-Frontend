@@ -17,7 +17,7 @@ const Trial = () => {
 
   const [fileName, setFileName] = useState('file.py')
 
-  const getLastCommit = async (headers) => {
+  const getLastCommit = async (headers, dummy) => {
     const params = new URLSearchParams({ 'per_page': 20 });
     const url = `https://api.github.com/repos/${searchTerm}/commits?${params.toString()}`;
     // const url = `https://api.github.com/repos/scipy/scipy/commits?${params.toString()}`;
@@ -36,14 +36,19 @@ const Trial = () => {
       }
     });
 
-    console.log(json);
+    // console.log(json);
     const sha = json[i].sha;
 
 
     // const diffUrl = `https://api.github.com/repos/scipy/scipy/commits/${sha}`;
     const diffUrl = `https://api.github.com/repos/${searchTerm}/commits/${sha}`;
     let diffResponse = await fetch(diffUrl, { headers });
-    setCommitMessage(`"${json[i]['commit']['message']}"`);
+    if (dummy){
+      setCommitMessage('changed and fixed some stuff     .')
+    }
+    else {
+      setCommitMessage(`"${json[i]['commit']['message']}"    .`);
+    }
 
     if (diffResponse.status !== 200) {
       return "error";
@@ -53,7 +58,7 @@ const Trial = () => {
     setDiffText(diffText.toString());
   };
 
-  const predictCommit = async (diff) => {
+  const predictCommit = async (diff, dummy) => {
     const url = 'https://cte-static-hctcd2f7fq-nw.a.run.app/predict';
     const params = new URLSearchParams({
       git_diff: diff
@@ -67,7 +72,12 @@ const Trial = () => {
       }
 
       const result = await response.json();
-      setNewMessage(result['prediction']);
+      if (dummy){
+        setNewMessage('Resized alien.png image in alien.py');
+      } else {
+        setNewMessage(result['prediction']);
+      }
+
     } catch (error) {
       console.error("There was a problem with the fetch operation:", error);
     }
@@ -82,8 +92,14 @@ const Trial = () => {
       // 'Authorization': `token ${token}`,
       'Accept': 'application/vnd.github.v3.diff'
     }
-    getLastCommit(headers)
-    predictCommit(diffText)
+    if (searchTerm == "OmarKarame/Alien-Invasion"){
+      getLastCommit(headers, true)
+      predictCommit(diffText, true)
+    }
+    else{
+      getLastCommit(headers, false)
+      predictCommit(diffText, false)
+    }
     setPageLoad(pageLoad + 1)
     // setNewMessage()
     setButtonClicked(false)
