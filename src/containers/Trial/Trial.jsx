@@ -2,12 +2,14 @@ import './Trial.scss'
 import { useState, useEffect } from 'react';
 import Button from '../../components/Button/Button'
 import SearchBar from '../../components/SearchBar/SearchBar'
+import Typewriter from '../../components/Typewriter/Typewriter';
 
 const Trial = () => {
   const [display, setDisplay] = useState(false)
   const [searchTerm, setSearchTerm] = useState("");
 
   const [newMessage, setNewMessage] = useState("");
+  const [pageLoad, setPageLoad] = useState(0)
 
   const [buttonClicked, setButtonClicked] = useState(false);
   const [commitMessage, setCommitMessage] = useState('')
@@ -41,7 +43,7 @@ const Trial = () => {
     // const diffUrl = `https://api.github.com/repos/scipy/scipy/commits/${sha}`;
     const diffUrl = `https://api.github.com/repos/${searchTerm}/commits/${sha}`;
     let diffResponse = await fetch(diffUrl, { headers });
-    setCommitMessage(`${json[i]['commit']['message']}"`);
+    setCommitMessage(`"${json[i]['commit']['message']}"`);
 
     if (diffResponse.status !== 200) {
       return "error";
@@ -82,9 +84,11 @@ const Trial = () => {
     }
     getLastCommit(headers)
     predictCommit(diffText)
+    setPageLoad(pageLoad + 1)
     // setNewMessage()
     setButtonClicked(false)
   },[buttonClicked])
+
 
 
   const handleSearchInput = (event) => {
@@ -93,7 +97,6 @@ const Trial = () => {
 
   const handleButtonClick = () => {
     setButtonClicked(true)
-    setDisplay(true)
   };
 
   const handleReset = () => {
@@ -101,6 +104,12 @@ const Trial = () => {
     setCommitMessage('')
     setDisplay(false)
   }
+
+  useEffect(()=>{
+    if (pageLoad >= 1 && newMessage != ''){
+      setDisplay(true)
+    }
+  },[newMessage])
 
 
   return (
@@ -131,11 +140,11 @@ const Trial = () => {
                 <div className='trial__git-terminal--nav--buttons--yellow'></div>
                 <div className='trial__git-terminal--nav--buttons--green'></div>
               </div>
-              <p>~ {fileName} ~</p>
+              <p>~ git {fileName} ~</p>
             </div>
             <div className='trial__git-terminal--text'>
-              <p>~ <span className='blue'>git:(</span><span className='red'>master</span><span className='blue'>) </span><span className='blue'> git </span> add {fileName}</p>
-              <p>~ <span className='blue'>git:(</span><span className='red'>master</span><span className='blue'>) <span className='blue'> git </span> commit -m </span><span className='yellow'>"{commitMessage}</span><span className='bold'>┃┃┃┃┃</span></p>
+              <p>~ <span className='blue'>git:(</span><span className='red'>master</span><span className='blue'>) </span><span className='green'> git </span> add {fileName}</p>
+              <p>~ <span className='blue'>git:(</span><span className='red'>master</span><span className='blue'>) <span className='green'> git </span></span>  commit -m <span className='yellow'>{display ? "" : <Typewriter text={commitMessage}/>}</span></p>
             </div>
           </div>
           <div className='trial__cte-terminal'>
