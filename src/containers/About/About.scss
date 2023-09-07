@@ -3,7 +3,7 @@
 @use "../../styles/_typography.scss" as *;
 
 .about{
-  height: 90vh;
+  height: 70vh;
   width: 100vw;
   min-height: 55rem;
   background-color: rgb(255, 255, 253);
@@ -12,6 +12,12 @@
   align-items: center;
   justify-content: space-around;
   padding-bottom: 8rem;
+  background-image: url('../../styles/images/background2.png');
+
+  /* Control the positioning and repeat */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   &--title{
     font-family: $secondary-font-family;
   }

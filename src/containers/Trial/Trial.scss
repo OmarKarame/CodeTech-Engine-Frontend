@@ -13,6 +13,13 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    // background-image: url('../../styles/images/background1.png');
+
+    // /* Control the positioning and repeat */
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+
     &__headers{
       width: 90vw;
       display: flex;
@@ -220,7 +227,7 @@
   }
 }
 
-@media only screen and (max-width: $desktop-breakpoint) {
+@media only screen and (max-width: $desktop-breakpoint) and (min-width: $tablet-breakpoint) {
   .trial{
     width: 100vw;
     height: auto;
@@ -419,6 +426,12 @@
   }
   .green{
     color: greenyellow;
+  }
+  .yellow{
+    letter-spacing: 0.1rem;
+  }
+  .bold{
+    letter-spacing: -1.35rem;
   }
 }
 

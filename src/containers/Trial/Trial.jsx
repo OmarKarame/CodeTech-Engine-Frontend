@@ -16,7 +16,7 @@ const Trial = () => {
   const [fileName, setFileName] = useState('file.py')
 
   const getLastCommit = async (headers) => {
-    const params = new URLSearchParams({ 'per_page': 1 });
+    const params = new URLSearchParams({ 'per_page': 20 });
     const url = `https://api.github.com/repos/${searchTerm}/commits?${params.toString()}`;
     // const url = `https://api.github.com/repos/scipy/scipy/commits?${params.toString()}`;
 
@@ -26,12 +26,22 @@ const Trial = () => {
     }
 
     let json = await response.json();
-    const sha = json[0].sha;
+    let i  = 0
+    json.forEach(object => {
+
+      if (object['commit']['message'].toLowerCase().includes('merge') && i<20) {
+        i++
+      }
+    });
+
+    console.log(json);
+    const sha = json[i].sha;
+
 
     // const diffUrl = `https://api.github.com/repos/scipy/scipy/commits/${sha}`;
     const diffUrl = `https://api.github.com/repos/${searchTerm}/commits/${sha}`;
     let diffResponse = await fetch(diffUrl, { headers });
-    setCommitMessage(`${json[0]['commit']['message']}"`);
+    setCommitMessage(`${json[i]['commit']['message']}"`);
 
     if (diffResponse.status !== 200) {
       return "error";
@@ -42,7 +52,7 @@ const Trial = () => {
   };
 
   const predictCommit = async (diff) => {
-    const url = 'https://cte-hctcd2f7fq-ew.a.run.app/predict';
+    const url = 'https://cte-static-hctcd2f7fq-nw.a.run.app/predict';
     const params = new URLSearchParams({
       git_diff: diff
     });
