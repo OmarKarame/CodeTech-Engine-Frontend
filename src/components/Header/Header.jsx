@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Header.scss';
-import cteLogoLetters from '../../styles/images/cte-logo-letters.png';
-import hamburgerIcon from '../../styles/images/humburger-icon.svg';
+import cteLogoLetters from '../../styles/images/cte-logo-letters-black.png';
+import hamburgerIcon from '../../styles/images/humburger-icon-black.svg';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <div className='header'>
-      <img src={cteLogoLetters} alt="cte logo letters" className='header__logo-letters' />
+      <Link to={'/home'}><img src={cteLogoLetters} alt="cte logo letters" className='header__logo-letters' /></Link>
       {windowWidth > 768 ? (
         <div className='header--navbar-links'>
           <Link className="header--navbar-links__link" to="/home">Home</Link>

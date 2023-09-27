@@ -1,9 +1,10 @@
-import React from 'react'
+import './AboutUs.scss'
+import Header from '../../components/Header/Header'
 
 const AboutUs = () => {
   return (
-    <div>
-
+    <div className='about-us'>
+      <Header />
     </div>
   )
 }

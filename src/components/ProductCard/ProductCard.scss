@@ -1,0 +1,65 @@
+@use "../../styles/_variables.scss" as *;
+@use "../../styles/_reset.scss" as *;
+@use "../../styles/_typography.scss" as *;
+
+.product-card{
+  background-color: $color-white;
+  height: 20rem;
+  aspect-ratio: 1;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0.75rem;
+  &--info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    width: 80%;
+    transform: translateY(-0.25rem);
+    h5{
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      font-size: 120%;
+    }
+    h6{
+      color: $color-darkgrey;
+      font-size: 100%;
+    }
+  }
+  &--icon-section{
+    height: 8.5rem;
+    width: 8.5rem;
+    background-color: $color-grey;
+    border-radius: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    &__terminal{
+      height: 60%;
+      width: auto;
+    }
+    &__vscode{
+      height: 110%;
+      width: auto;
+    }
+    &__chatbot{
+      height: 80%;
+      width: auto;
+    }
+    &__consulting{
+      height: 75%;
+      transform: translateY(-0.5rem);
+      aspect-ratio: 0.9;
+      width: auto;
+    }
+  }
+  &:hover{
+    background-color: #711ff50b;
+    cursor: pointer;
+  }
+}
