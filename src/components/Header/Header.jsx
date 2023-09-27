@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Header.scss';
 import cteLogoLetters from '../../styles/images/cte-logo-letters.png';
-import hamburgerIcon from '../../styles/images/humburger-icon.svg'
+import hamburgerIcon from '../../styles/images/humburger-icon.svg';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -29,11 +30,11 @@ const Header = () => {
       <img src={cteLogoLetters} alt="cte logo letters" className='header__logo-letters' />
       {windowWidth > 768 ? (
         <div className='header--navbar-links'>
-          <a href="#home"><p>Home</p></a>
-          <a href="#about"><p>About</p></a>
-          <a href="#trial"><p>Trial</p></a>
-          <a href="https://github.com/OmarKarame/commit-to-excellence-command-line-interface"><p>Docs</p></a>
-          <a href="#team"><p>Team</p></a>
+          <Link className="header--navbar-links__link" to="/home">Home</Link>
+          <Link className="header--navbar-links__link" to="/about">About Us</Link>
+          <Link className="header--navbar-links__link" to="/products">Products</Link>
+          <Link className="header--navbar-links__link" to="/businessmodel">Business Model</Link>
+          <Link className="header--navbar-links__link" to="/team">Team</Link>
         </div>
       ) : (
         <div className='header--navbar-dropdown'>
@@ -43,11 +44,11 @@ const Header = () => {
               <>
                 <p onClick={handleButtonClick} className='header--navbar-dropdown__image'>X</p>
                 <div className='header--navbar-dropdown__links'>
-                  <a href="#home" onClick={handleButtonClick}><p>Home</p></a>
-                  <a href="#about" onClick={handleButtonClick}><p>About</p></a>
-                  <a href="#trial" onClick={handleButtonClick}><p>Trial</p></a>
-                  <a href="https://github.com/OmarKarame/commit-to-excellence-command-line-interface" onClick={handleButtonClick}><p>Docs</p></a>
-                  <a href="#team" onClick={handleButtonClick}><p>Team</p></a>
+                  <Link className='header--navbar-dropdown__links__link' to="/home" onClick={handleButtonClick}>Home</Link>
+                  <Link className='header--navbar-dropdown__links__link' to="/about" onClick={handleButtonClick}>About Us</Link>
+                  <Link className='header--navbar-dropdown__links__link' to="/products" onClick={handleButtonClick}>Products</Link>
+                  <Link className='header--navbar-dropdown__links__link' to="/businessmodel" onClick={handleButtonClick}>Business Model</Link>
+                  <Link className='header--navbar-dropdown__links__link' to="/team" onClick={handleButtonClick}>Team</Link>
                 </div>
               </>
             )

@@ -1,29 +1,25 @@
 import './App.scss';
-import Intro from './containers/Intro/Intro';
-import Header from "./components/Header/Header"
-import About from "./containers/About/About"
-import Context from "./containers/Context/Context"
-import Trial from "./containers/Trial/Trial"
-import Team from "./containers/Team/Team"
+import HomePage from './pages/HomePage/HomePage';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import ProductDetails from './pages/ProductDetails/ProductDetails';
+import BusinessModel from './pages/BusinessModel/BusinessModel';
+import AboutUs from './pages/AboutUs/AboutUs';
+import TeamPage from './pages/TeamPage/TeamPage';
 
 function App() {
   return (
-      <Router>
+    <Router>
+      <div className="app">
         <Routes>
-         <Route path="/" element={
-          <div className="app">
-            <Header />
-            <Intro />
-            <About />
-            <Context />
-            <Trial />
-            <Team />
-            {/* <AboutMeInterests /> */}
-          </div>
-         } />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/products" element={<ProductDetails />} />
+          <Route path="/businessmodel" element={<BusinessModel />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="*" element={<HomePage />} />
         </Routes>
-      </Router>
+      </div>
+    </Router>
   );
 }
 

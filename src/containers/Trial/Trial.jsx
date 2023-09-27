@@ -44,7 +44,7 @@ const Trial = () => {
     const diffUrl = `https://api.github.com/repos/${searchTerm}/commits/${sha}`;
     let diffResponse = await fetch(diffUrl, { headers });
     if (dummy){
-      setCommitMessage('changed and fixed some stuff     .')
+      setCommitMessage('"changed and fixed some stuff"                                                                    .')
     }
     else {
       setCommitMessage(`"${json[i]['commit']['message']}"    .`);

@@ -3,14 +3,19 @@
 @use "../../styles/_typography.scss" as *;
 
 .header{
-  width: 100vw;
-  height: 10%;
+  width: 100%;
+  height: 6vh;
+  min-height: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 2rem;
   padding-right: 2rem;
+  background-color: $color-black;
   z-index: 10;
+  position: fixed;
+  left: -16px;
+  top: 0rem;
   &--cte{
     font-family: $secondary-font-family;
     color: $color-white;
@@ -24,19 +29,21 @@
   }
   &__logo-letters{
     height: 3.5rem;
+    margin-left: 0.75rem;
   }
   &--navbar-links{
     color: $color-white;
-    width: 20rem;
+    width: 30rem;
     z-index: 10;
     font-size: 1.25rem;
     font-family: $primary-font-family;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    p{
+    &__link{
       width: max-content;
       color: $color-white;
+      text-decoration: none;
       &:hover{
         width: max-content;
         color: #b831f6;
@@ -77,8 +84,12 @@
       align-items: center;
       justify-content: center;
       background: linear-gradient(to bottom, #b831f6, #721ff5, #2d27f5, #658ef7);
-      p{
+      &__link{
+        color: $color-white;
+        text-decoration: none;
         font-family: $secondary-font-family;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
       }
     }
   }
