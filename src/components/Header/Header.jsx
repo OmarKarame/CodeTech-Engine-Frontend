@@ -33,7 +33,6 @@ const Header = () => {
           <Link className="header--navbar-links__link" to="/home">Home</Link>
           <Link className="header--navbar-links__link" to="/about">About Us</Link>
           <Link className="header--navbar-links__link" to="/products">Products</Link>
-          <Link className="header--navbar-links__link" to="/businessmodel">Business Model</Link>
           <Link className="header--navbar-links__link" to="/team">Team</Link>
         </div>
       ) : (
@@ -47,7 +46,6 @@ const Header = () => {
                   <Link className='header--navbar-dropdown__links__link' to="/home" onClick={handleButtonClick}>Home</Link>
                   <Link className='header--navbar-dropdown__links__link' to="/about" onClick={handleButtonClick}>About Us</Link>
                   <Link className='header--navbar-dropdown__links__link' to="/products" onClick={handleButtonClick}>Products</Link>
-                  <Link className='header--navbar-dropdown__links__link' to="/businessmodel" onClick={handleButtonClick}>Business Model</Link>
                   <Link className='header--navbar-dropdown__links__link' to="/team" onClick={handleButtonClick}>Team</Link>
                 </div>
               </>

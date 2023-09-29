@@ -35,7 +35,7 @@
   }
   &--description{
     width: 43.5rem;
-    aspect-ratio: 1;
+    height: 43.5rem;
     margin-right: 6rem;
     padding-right: 6rem;
     display: flex;
@@ -57,6 +57,137 @@
       }
       Button{
         transform: translateY(4rem);
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: $desktop-breakpoint) {
+  .product-dashboard{
+    height: auto;
+    min-height: 50rem;
+    width: 100vw;
+    margin-top: 5rem;
+    background-color: $color-grey;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    align-items: center;
+    &--products{
+      width: 43.5rem;
+      margin-bottom: 5rem;
+      margin-left: 0;
+      display: grid;
+      grid-template-columns: 2;
+      grid-template-rows: 2;
+      grid-template-areas:
+        'terminal docstring'
+        'pull-request consulting';
+      &__terminal{
+        grid-area: 'terminal';
+      }
+      &__docstrings{
+        grid-area: 'docstring';
+      }
+      &__pull-request{
+        grid-area: 'pull-request';
+      }
+      &__consulting{
+        grid-area: 'consulting';
+      }
+    }
+    &--description{
+      width: 43.5rem;
+      height:35rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-right: 0;
+      padding-right: 0;
+      &__top{
+        margin-top: 5rem;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        h2{
+          font-size: 3.5rem;
+          font-weight: 400;
+          margin-top: 0.5rem;
+        }
+        h5{
+          color: $color-darkgrey;
+          font-weight: bold;
+        }
+        Button{
+          transform: translateY(5.5rem);
+        }
+      }
+      &__bottom{
+        margin-left: auto;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+
+
+@media only screen and (max-width: $tablet-breakpoint) {
+  .product-dashboard{
+    height: auto;
+    min-height: 50rem;
+    width: 100vw;
+    margin-top: 5rem;
+    background-color: $color-grey;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    align-items: center;
+    &--products{
+      width: 43.5rem;
+      height: auto;
+      margin-bottom: 5rem;
+      margin-left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+    }
+    &--description{
+      width: 20rem;
+      height: 50rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-right: 0;
+      padding-right: 0;
+      text-align: center;
+      &__top{
+        margin-top: 5rem;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        h2{
+          font-size: 3rem;
+          font-weight: 400;
+          margin-top: 0.5rem;
+        }
+        h5{
+          color: $color-darkgrey;
+          font-weight: bold;
+        }
+        Button{
+          transform: translateY(2rem) translateX(5rem);
+        }
+      }
+      &__bottom{
+        margin-left: 0;
+        transform: translateY(5rem) translateX(5rem);
+        margin-bottom: 6rem;
+        width: min-content;
       }
     }
   }

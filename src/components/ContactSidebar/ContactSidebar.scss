@@ -1,0 +1,40 @@
+@use "../../styles/_variables.scss" as *;
+@use "../../styles/_reset.scss" as *;
+@use "../../styles/_typography.scss" as *;
+
+.contact-sidebar{
+  background-color: transparent;
+  height: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  color: $color-darkgrey;
+  &--components{
+    display: flex;
+    &--component{
+      height: 3rem;
+      aspect-ratio: 1;
+      border-radius: 5rem;
+      background-color: $color-mediumgrey;
+      margin-right: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover{
+        cursor: pointer;
+        background-color: $color-white;
+      }
+      &__linkedin{
+        height: 50%;
+      }
+      &__twitter{
+        height: 50%;
+      }
+      &__instagram{
+        height: 50%;
+      }
+    }
+  }
+}

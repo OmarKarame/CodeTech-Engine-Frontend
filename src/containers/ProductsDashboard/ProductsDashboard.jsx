@@ -1,5 +1,6 @@
 import './ProductsDashboard.scss'
 import ProductCard from '../../components/ProductCard/ProductCard'
+import ContactSidebar from '../../components/ContactSidebar/ContactSidebar'
 import TerminalPNG from '../../styles/images/terminal.png'
 import VSCodePNG from '../../styles/images/vscode.png'
 import ChatBotPNG from '../../styles/images/chatbot.png'
@@ -42,13 +43,13 @@ const ProductsDashboard = () => {
       <div className='product-dashboard--description'>
         <div className='product-dashboard--description__top'>
           <h2>Elevate your work with CodeTech Engine</h2>
-          <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In tempore, voluptate minima ex, et suscipit, officiis beatae laboriosam iste doloremque error pariatur quis ipsam voluptatum cum aut vitae sit. Porro.</h5>
+          <h5>Step into the future with CodeTech Engine, where AI meets work efficiency. Our suite of advanced tools is designed to streamline and elevate your development process and business needs.</h5>
           <Button
             buttonName={'Explore All →'}
           />
         </div>
         <div className='product-dashboard--description__bottom'>
-          {/* build component ContactVessel */}
+          <ContactSidebar />
         </div>
       </div>
     </div>

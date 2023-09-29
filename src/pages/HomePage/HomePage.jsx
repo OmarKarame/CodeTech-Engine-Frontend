@@ -9,6 +9,7 @@ const HomePage = () => {
   return (
     <div className='home-page'>
       <Intro />
+      {/* <img src={BackgroundIMG} alt=""  className='home-page--background-image'/> */}
       <HomeHeader />
       <About />
       <Context />

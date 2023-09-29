@@ -14,7 +14,6 @@
   background-color: $color-black;
   z-index: 10;
   position: fixed;
-  left: -16px;
   top: 0rem;
   &--cte{
     font-family: $secondary-font-family;
@@ -36,7 +35,7 @@
   }
   &--navbar-links{
     color: $color-white;
-    width: 30rem;
+    width: 20rem;
     z-index: 10;
     font-size: 1.25rem;
     font-family: $primary-font-family;
@@ -96,4 +95,104 @@
       }
     }
   }
+}
+
+
+@media only screen and (max-width: $tablet-breakpoint) {
+  .home-header{
+    width: 100%;
+    height: 6vh;
+    min-height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: $color-black;
+    z-index: 10;
+    position: fixed;
+    left: 0px;
+    top: 0rem;
+    &--cte{
+      font-family: $secondary-font-family;
+      color: $color-white;
+      font-size: 3rem;
+      width: max-content;
+      letter-spacing: -0.7rem;
+      &__e{
+        font-family: $secondary-font-family;
+        transform: rotate(90deg);
+      }
+    }
+    &__logo-letters{
+      height: 3.5rem;
+      margin-left: 0.75rem;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+    &--navbar-links{
+      color: $color-white;
+      width: 20rem;
+      z-index: 10;
+      font-size: 1.25rem;
+      font-family: $primary-font-family;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__link{
+        width: max-content;
+        color: $color-white;
+        text-decoration: none;
+        &:hover{
+          width: max-content;
+          color: #b831f6;
+        }
+      }
+    }
+    &--navbar-dropdown{
+      color: $color-white;
+      width: 2rem;
+      font-size: 2rem;
+      font-family: $primary-font-family;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      p{
+        width: max-content;
+        color: $color-white;
+        transform: translateX(0.25rem) translateY(-0.25rem);
+      }
+      &__image{
+        height: 1.5rem;
+        z-index: 10;
+        transform: translateX(-0.25rem) translateY(0.25rem);
+        &:hover{
+          cursor: pointer;
+        }
+      }
+      &__links{
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to bottom, #721ff5, #658ef7);
+        &__link{
+          color: $color-white;
+          text-decoration: none;
+          font-family: $secondary-font-family;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
 }
