@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+// @font-face {
+//   font-family: 'Bree Serif', serif;;
+//   src: url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+// }
+
 @font-face {
-  font-family: 'Bree Serif', serif;;
-  src: url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+  font-family: 'Oswald';;
+  src: url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 }
+
 // @font-face {
 //   font-family: 'Lato', sans-serif;
 //   // font-family: 'Oxanium', cursive;
@@ -14,7 +20,7 @@
 $mobile-breakpoint: 480px;
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1254px;
-$large-desktop-breakpoint: 1440px;
+$large-desktop-breakpoint: 1640px;
 $extra-large-desktop-breakpoint: 2560px;
 
 //main colors
@@ -27,7 +33,7 @@ $color-darkgrey: #686868;
 
 // #b831f6 pink
 $color-purple: #721ff5;
-// #658ef7 light blue
+$color-blue: #658ef7;
 // #2d27f5 dark blue
 
 
@@ -47,4 +53,4 @@ $font-size-extra-small: 1rem;
 $letter-spacing: 160%;
 
 $primary-font-family: 'Lato', sans-serif;
-$secondary-font-family: 'Bree Serif';
+$secondary-font-family: 'Oswald', sans-serif;

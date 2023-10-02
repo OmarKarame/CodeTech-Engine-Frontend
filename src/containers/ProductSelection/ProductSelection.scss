@@ -1,0 +1,43 @@
+@use "../../styles/_variables.scss" as *;
+@use "../../styles/_reset.scss" as *;
+@use "../../styles/_typography.scss" as *;
+
+.product-selection{
+  background-color: $color-grey;
+  height: auto;
+  width: 75vw;
+  margin-top: 10rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media only screen and (max-width: $large-desktop-breakpoint) {
+  .product-selection{
+    background-color: $color-grey;
+    height: auto;
+    width: 75vw;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: $tablet-breakpoint) {
+  .product-selection{
+    background-color: $color-grey;
+    height: auto;
+    width: 75vw;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+  }
+}

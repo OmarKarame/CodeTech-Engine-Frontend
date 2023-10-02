@@ -4,7 +4,7 @@
 
 .product-card{
   background-color: $color-white;
-  height: 20rem;
+  height: 17rem;
   aspect-ratio: 1;
   border-radius: 0.5rem;
   display: flex;
@@ -29,6 +29,8 @@
     h6{
       color: $color-darkgrey;
       font-size: 100%;
+      font-family: $primary-font-family;
+      font-weight: 500;
     }
   }
   &--icon-section{
@@ -53,9 +55,8 @@
       width: auto;
     }
     &__consulting{
-      height: 75%;
-      transform: translateY(-0.5rem);
-      aspect-ratio: 0.9;
+      height: 55%;
+      transform: translateY(0rem);
       width: auto;
     }
   }

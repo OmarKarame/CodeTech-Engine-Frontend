@@ -3,7 +3,7 @@ import ProductCard from '../../components/ProductCard/ProductCard'
 import ContactSidebar from '../../components/ContactSidebar/ContactSidebar'
 import TerminalPNG from '../../styles/images/terminal.png'
 import VSCodePNG from '../../styles/images/vscode.png'
-import ChatBotPNG from '../../styles/images/chatbot.png'
+import ChatBotPNG from '../../styles/images/consultingPNG.png'
 import ChromeExtensionPNG from '../../styles/images/chrome-extension.png'
 import Button from '../../components/Button/Button'
 
