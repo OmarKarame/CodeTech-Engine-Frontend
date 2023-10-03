@@ -128,3 +128,39 @@
     }
   }
 }
+
+
+@media only screen and (max-width: $desktop-breakpoint) {
+  .commit-message{
+    &--text{
+      color: transparent;
+      margin-top: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  }
+
+  .vscode{
+    &--text{
+      color: transparent;
+      margin-top: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  }
+
+  .chrome{
+    &--text{
+      color: transparent;
+      margin-top: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  }
+}
