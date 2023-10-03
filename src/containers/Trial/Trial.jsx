@@ -130,9 +130,6 @@ const Trial = () => {
 
   return (
     <div className='trial' id='trial'>
-      <h2>
-        Trial
-      </h2>
       <div className='trial__body'>
         <div className='trial__search'>
           <SearchBar

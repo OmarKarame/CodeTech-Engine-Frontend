@@ -1,8 +1,9 @@
 import './Intro.scss'
 import BlobContainer from "../BlobContainer/BlobContainer"
 import Title from "../../components/Title/Title"
+import TrialSelection from '../../components/TrialSelection/TrialSelection'
 
-const Intro = () => {
+const Intro = ({ scroll }) => {
   return (
     <div className='intro' id='home'>
       <div className='intro--info'>
@@ -13,8 +14,9 @@ const Intro = () => {
         />
         <BlobContainer />
       </div>
-      <div className='intro--line-one'></div>
-      <div className='intro--line-two'></div>
+      <TrialSelection
+        scrollDown={scroll}
+      />
     </div>
   )
 }

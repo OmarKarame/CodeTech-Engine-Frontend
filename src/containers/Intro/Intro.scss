@@ -4,26 +4,21 @@
 
 .intro{
   height: 91vh;
+  max-height: 54rem;
   min-height: 50rem;
   width: 100vw;
   margin-top: 6rem;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  margin-bottom: -0.5rem;
+  position: relative;
+  overflow-y: hidden;
   &--info{
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-around;
     z-index: 1;
   }
-  &--line-one{
-    height: 370px;
-    background-color: $color-purple;
-    width: 50rem;
-    transform: translateY(6rem) rotateZ(20deg);
-    box-shadow: 3rem 3rem 5rem 10rem $color-purple;
-    opacity: 0.4;
+  &--title{
+    transform: translateY(-5rem);
   }
 }
 

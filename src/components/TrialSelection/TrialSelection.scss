@@ -1,0 +1,43 @@
+@use "../../styles/_variables.scss" as *;
+@use "../../styles/_reset.scss" as *;
+@use "../../styles/_typography.scss" as *;
+
+.trial-selection{
+  height: 20rem;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -7rem;
+  &--tab{
+    height: 16rem;
+    width: 60rem;
+    background-color: $color-black;
+    border-radius: 5rem;
+    border-top: 2px solid $color-white;
+    box-shadow: inset 2px 10px 8px -3px $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__info{
+      color: $color-white;
+      transform: translateY(-2rem) translateX(2rem);
+      h3{
+        font-size: 2rem;
+      }
+      h5{
+        font-size: 1rem;
+        margin-top: 1rem;
+      }
+    }
+    &__products{
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      // border: 1px solid red;
+      width: 55%;
+      height: 25rem;
+    }
+  }
+}

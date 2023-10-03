@@ -10,21 +10,22 @@
   flex-direction: column;
   align-items: center;
   margin-left: 8rem;
+  margin-top: 2rem;
   &--primary{
     font-family: $secondary-font-family;
     margin: 1rem;
     margin-left: 1rem;
     font-size: 3.5rem;
     margin-top: -1rem;
+    font-size: 5rem
   }
   &--secondary{
     width: 25rem;
     font-family: $primary-font-family;
     margin-top: -1rem;
     margin-right: 1rem;
-    margin-left: 1rem;
-    margin-left: 3.3rem;
-    font-size: 1.2rem;
+    margin-left: -1.25rem;
+    font-size: 1.4rem;
   }
 }
 
